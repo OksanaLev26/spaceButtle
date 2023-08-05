@@ -63,8 +63,6 @@ class Ship {
 
   attackEnemy(enemyArr, player, enemyButton, yourButton) {
     const randomNumber = Math.random();
-    console.log("randomNumber", randomNumber);
-    console.log("enemyArr[0]", enemyArr[0].accuracy);
     if (randomNumber < enemyArr[0].accuracy) {
       alert("Target hit!");
 
@@ -98,8 +96,6 @@ class Ship {
       }
      
       if (enemyArr.length === 0) {
-        console.log('enemyButton', enemyButton);
-        console.log('yourButton', yourButton);
         alert("You win!");
         const message = prompt("Do you want to return to base and recharge your shields?  (Y/N)");
         if (message && message.toLowerCase() === "y") {
@@ -109,7 +105,6 @@ class Ship {
         }
         const userScore = document.querySelector('.playerScore');
           const enemyScore = document.querySelector('.enemyScore');
-          console.log('enemyButton.className', enemyButton.className)
           if (enemyButton.className === 'user') {
             userScore.textContent = userScore.textContent;
             enemyScore.textContent = Number(enemyScore.textContent) + 1;
@@ -128,7 +123,6 @@ class Ship {
           alert('If you want to play more, press the Start button');
           const userScore = document.querySelector('.playerScore');
           const enemyScore = document.querySelector('.enemyScore');
-          console.log('enemyButton.className', enemyButton.className)
           if (enemyButton.className === 'user') {
             userScore.textContent = Number(userScore.textContent) + 1;
             enemyScore.textContent = enemyScore.textContent;
@@ -216,7 +210,6 @@ const initGame = () => {
   const randomAlienNumber = getRandomAlienNumber(10, 1);
   const aliens = getAliens(randomAlienNumber);
   enemyShipsNumber.textContent = `Enemy has ${aliens.length} ships`;
-  console.log('aliens', aliens)
   renderPlayerProperties(ussAssembly, "playerStats");
   renderPlayerProperties(aliens[0], "enemyStats");
 
